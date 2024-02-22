@@ -14,6 +14,7 @@ void GetMutex(MutexType *mutex)
 	if (mutex->flag == LOCKED) {
 		printfSerial("  -->  BLock");
 		GetTaskID(&(mutex->waiting_task));
+		printfSerial("%d\n", mutex->waiting_task);
 		WaitEvent(mutex->event);
 	}
 	mutex->flag = LOCKED;

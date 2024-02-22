@@ -32,7 +32,7 @@ CPU mySystem {
 		AUTOSTART = TRUE;	
         ACTIVATION = 1;		
 	};
-	
+
 	ISR TimerISR {
 		CATEGORY = 2;
 		SOURCE = "TIMER1_COMPA";

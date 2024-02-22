@@ -5,17 +5,17 @@ volatile unsigned long shared = 0;
 ISR2(TimerISR)
 {
     IncrementCounter(counter1);
+
 }
 
 TASK(Task1)
 {
-	TaskType id;
+	unsigned long i;
 	printfSerial("Task1 Begins...\n");
-
-	for (unsigned long i = 0; i < 1000000; i++) {
+	for (i = 0; i < 1000000; i++) {
 		//Write the code below.
 		GetResource(S1);
-		shared++;
+    	shared++;
 		ReleaseResource(S1);
 	}
 	printfSerial("Added 1000000 to shared\n");
@@ -31,14 +31,11 @@ TASK(Task2)
     	//Write the code below.
 		GetResource(S1);
     	shared++;
-    	ReleaseResource(S1);
-    }
-    else if (i == 1000) {
+		ReleaseResource(S1);
+    } else if (i == 1000) {
     	printfSerial("Added 1000 to shared\n");
-    }
-    else {
-    	;
-    }
+	}
+    
 	i++;
     TerminateTask();
 }

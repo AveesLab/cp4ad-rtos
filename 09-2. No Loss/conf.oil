@@ -3,7 +3,7 @@ CPU mySystem {
 		EE_OPT = "DEBUG";
 		USERESSCHEDULER = TRUE;
 		CPU_DATA = AVR8 {
-			MULTI_STACK = TRUE;
+			MULTI_STACK = FALSE;
 		};
 		MCU_DATA = MEGA {
 			MODEL = MEGA_328p;
@@ -23,11 +23,7 @@ CPU mySystem {
 	APPDATA myApp {
 		APP_SRC = "bsw.cpp";
 		APP_SRC = "asw.c";
-	};
-	
-	//Write the code below.
-	RESOURCE S1 {
-	    RESOURCEPROPERTY = STANDARD;
+		APP_SRC = "mutex.c";
 	};
 
     COUNTER counter1 {
@@ -53,22 +49,24 @@ CPU mySystem {
 		SCHEDULE = FULL;
 		AUTOSTART = TRUE;
         ACTIVATION = 1;
-        //Write the code below.
-        RESOURCE = S1;
+		RESOURCE = S1;
 	};
 	
 	TASK Task2 {
 		PRIORITY = 2;
-        STACK = SHARED;
+		STACK = SHARED;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
-        ACTIVATION = 1;   
-        //Write the code below.  
-        RESOURCE = S1;
+        ACTIVATION = 1;     
+		RESOURCE = S1;
 	};
     
 	ISR TimerISR {
 		CATEGORY = 2;
 		SOURCE = "TIMER1_COMPA";
+	};
+
+	RESOURCE S1 {
+		RESOURCEPROPERTY = STANDARD;
 	};
 };

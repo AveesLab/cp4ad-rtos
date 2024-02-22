@@ -1,13 +1,14 @@
 #include "ee.h"
 #include "Arduino.h"
 #include "bsw.h"
-#include <avr/io.h>			// <<--
-#include <avr/interrupt.h> 	// <<--
+#include <avr/io.h>
+#include <avr/interrupt.h>
 
 #define TIMER1_US	1000000U	/* 1 sec */
-#define  _BV(bit) (1 << (bit))	// <<--
 
 #define LEN_BUF 128
+
+#define _BV(bit) (1 << (bit))
 
 extern "C"{
 
@@ -47,26 +48,14 @@ void setup(void)
 	OsEE_atmega_startTimer1(TIMER1_US);
 }
 
-void ioport_init(void)		// <<--
-{
-	//PORTD = (_BV(PD2) | _BV(PD3));
-	PORTC = _BV(PC0); // PC0 == PA0
-}
-
-void interrupt_init(void)	// <<--
-{
-	//EICRA = _BV(ISC01) | _BV(ISC11);
-	//EIMSK = _BV(INT0) | _BV(INT1);
-	PCICR = _BV(PCIE1);   //PCIE1
-	PCMSK1 = _BV(PCINT8);  //PCINT8
-	EIFR = 0xff;
-	sei();
-}
-
 int main(void)
 {
-	ioport_init();		// <<--
-	interrupt_init();	// <<--
+	PORTC = _BV(PC0);
+	PCICR = _BV(PCIE1);
+	PCMSK1 = _BV(PCINT8);
+	EIFR = 0xff;
+	sei();
+
 	init();
 
 #if defined(USBCON)

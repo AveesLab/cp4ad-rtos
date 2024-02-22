@@ -1,11 +1,5 @@
 #include "bsw.h"
 
-ISR2(TimerISR)
-{
-    static long c = 0;
-    printfSerial("\n%4ld: ", c++);
-}
-
 TASK(Task1)
 {
 	printfSerial("Task1 Begins...");
@@ -15,7 +9,6 @@ TASK(Task1)
 	TerminateTask();
 }
 
-//Write the code below.
 TASK(Task2)
 {
 	printfSerial("Task2 Begins...");
@@ -23,4 +16,9 @@ TASK(Task2)
 	printfSerial("Task2 Finishes...");
 
 	TerminateTask();
+}
+ISR2(TimerISR)
+{
+	static long c = 0;
+	printfSerial("\n%4ld: ", c++);
 }

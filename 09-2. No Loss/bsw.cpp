@@ -2,10 +2,9 @@
 #include "Arduino.h"
 #include "bsw.h"
 
-#define TIMER1_US	1000U	/* 1 sec */
+#define TIMER1_US	1000U	/* 1 msec */
 
 #define LEN_BUF 128
-
 extern "C"{
 
 void mdelay(unsigned long delay_ms)

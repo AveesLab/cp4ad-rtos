@@ -8,6 +8,8 @@
 
 #define LEN_BUF 128
 
+#define _BV(bit) (1 << (bit))
+
 extern "C"{
 
 void mdelay(unsigned long delay_ms)
@@ -46,12 +48,11 @@ void setup(void)
 	OsEE_atmega_startTimer1(TIMER1_US);
 }
 
-#define  _BV(bit) (1 << (bit))	// <<--
 int main(void)
 {
-	PORTC = _BV(PC0); // PC0 == PA0
-	PCICR = _BV(PCIE1);   //PCIE1
-	PCMSK1 = _BV(PCINT8);  //PCINT8
+	PORTC = _BV(PC0);
+	PCICR = _BV(PCIE1);
+	PCMSK1 = _BV(PCINT8);
 	EIFR = 0xff;
 	sei();
 
