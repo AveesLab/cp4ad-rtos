@@ -2,16 +2,12 @@
 
 TASK(Task1)
 {
-	// Write the code below.
 	printfSerial("Hello World\n");
-	mdelay(3000);
+	// Write the code below.
+	
 	printfSerial("Goodbye World\n");
 	TerminateTask();
 }
 
+// Write the code below.
 
-ISR2(TimerISR)
-{
-	static long c = 0;
-	printfSerial("\n%4ld: ", c++);
-}

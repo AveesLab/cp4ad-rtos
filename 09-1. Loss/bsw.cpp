@@ -2,7 +2,8 @@
 #include "Arduino.h"
 #include "bsw.h"
 
-#define TIMER1_US	1000U	/* 1 msec */
+// Write the code below	
+/* 1 msec */
 
 #define LEN_BUF 128
 

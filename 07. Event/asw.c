@@ -13,19 +13,22 @@ TASK(Task1)
 
 TASK(Task2)
 {
-	EventMaskType mask;
+	// Write the code below.
+
 	printfSerial("Task2 Begins...");
 	printfSerial("Task2 Waits...");
-	WaitEvent(Event1 | Event2);
+	// Write the code below.
+
 	printfSerial("Task2 Wakes Up...");
-	GetEvent(Task2, &mask);
+	// Write the code below.
+
 	if(mask & Event1) {
-		printfSerial("[Event1]");
-		ClearEvent(Event1);
+		// Write the code below.
+
 	}
 	if (mask & Event2) {
-		printfSerial("[Event2]");
-		ClearEvent(Event2);
+		// Write the code below.
+
 	}
 	printfSerial("Task2 Finishes...");
 
@@ -35,7 +38,8 @@ ISR2(TimerISR)
 {
 	static long c = -4;
     if (c == 0) {
-        ActivateTask(Task1);
+        // Write the code below.
+		
     }
 	printfSerial("\n%4ld: ", c++);
 }
@@ -48,10 +52,12 @@ ISR2(ButtonISR)
 	printfSerial("<BUTTON ISR>");
 	a0 = analogRead(A0); // read ADC value
 	if (a0 < 50) { // UP
-		SetEvent(Task2, Event1);
+		// Write the code below.
+
 	} 
 	else if (a0 < 200) { // DOWN
-		SetEvent(Task2, Event2);
+		// Write the code below.
+
 	} 
 	else if (a0 < 380) { // LEFT
 		;

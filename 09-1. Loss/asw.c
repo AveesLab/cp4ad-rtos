@@ -1,6 +1,6 @@
 #include "bsw.h"
 
-volatile unsigned long shared = 0;
+// Write the code below
 
 ISR2(TimerISR)
 {
@@ -12,7 +12,8 @@ TASK(Task1)
 	unsigned long i;
 	printfSerial("Task1 Begins...\n");
 	for (i = 0; i < 1000000; i++) {
-		shared++;
+		// Write the code below
+
 	}
 	printfSerial("Added 1000000 to shared\n");
 	printfSerial("counter = %lu\n", shared);
@@ -24,7 +25,8 @@ TASK(Task2)
 {
 	static unsigned long i = 0;
     if (i < 1000) {
-    	shared++;
+    	// Write the code below
+		
     } else if (i == 1000) {
     	printfSerial("Added 1000 to shared\n");
     }

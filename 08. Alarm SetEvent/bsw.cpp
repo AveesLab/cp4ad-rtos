@@ -1,14 +1,10 @@
 #include "ee.h"
 #include "Arduino.h"
 #include "bsw.h"
-#include <avr/io.h>
-#include <avr/interrupt.h>
 
 #define TIMER1_US	1000000U	/* 1 sec */
 
 #define LEN_BUF 128
-
-#define _BV(bit) (1 << (bit))
 
 extern "C"{
 
@@ -50,12 +46,6 @@ void setup(void)
 
 int main(void)
 {
-	PORTC = _BV(PC0);
-	PCICR = _BV(PCIE1);
-	PCMSK1 = _BV(PCINT8);
-	EIFR = 0xff;
-	sei();
-
 	init();
 
 #if defined(USBCON)

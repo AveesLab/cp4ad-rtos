@@ -29,7 +29,8 @@ CPU mySystem {
 		PRIORITY = 1;
 		STACK = SHARED;
 		SCHEDULE = FULL;	// preemptive
-		AUTOSTART = FALSE;	
+		// Write the code below.
+	
         ACTIVATION = 1;		
 	};
 
@@ -37,7 +38,8 @@ CPU mySystem {
 		PRIORITY = 2;
 		STACK = SHARED;
 		SCHEDULE = FULL;
-		AUTOSTART = FALSE;
+		// Write the code below.
+		
 		ACTIVATION = 1;
 	};
 

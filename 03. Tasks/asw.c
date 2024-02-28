@@ -11,12 +11,11 @@ TASK(Task1)
 
 TASK(Task2)
 {
-	printfSerial("Task2 Begins...");
-	mdelay(3000);
-	printfSerial("Task2 Finishes...");
+	// Write the code below.
 
 	TerminateTask();
 }
+
 ISR2(TimerISR)
 {
 	static long c = 0;

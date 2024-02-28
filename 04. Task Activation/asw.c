@@ -4,7 +4,8 @@ TASK(Task1)
 {
 	printfSerial("Task1 Begins...");
 	mdelay(3000);
-	ActivateTask(Task2);
+	// Write the code below.
+	
 	mdelay(3000);
 	printfSerial("Task1 Finishes...");
 
@@ -22,9 +23,7 @@ TASK(Task2)
 ISR2(TimerISR)
 {
 	static long c = -4;
-	if (c == 0)
-	{
-		ActivateTask(Task1);
-	}
+	// Write the code below.
+
 	printfSerial("\n%4ld: ", c++);
 }

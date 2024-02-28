@@ -1,72 +1,66 @@
 #include "bsw.h"
 #include "mutex.h"
 
-MutexType M1;
+// Write the code below.
 
 ISR2(TimerISR)
 {
     static long c = -5;
     printfSerial("\n%4ld: ", ++c);
     if(c == -4) {
-    //Write the code below.
-		InitMutex(&M1, Event1);
+    // Write the code below.
+		
     }
-    //Write the code below.
-    else if (c == 0) {
-    	ActivateTask(TaskL);
+    // Write the code below.
+    else if (     ) {
+    	
     }
-    else if (c == 5) {
-    	ActivateTask(TaskH);
+    else if (     ) {
+    	
     }
-    else if (c == 7) {
-    	ActivateTask(TaskM);
+    else if (     ) {
+    	
     }
 
 }
 
+// Write the code below.
 TASK(TaskH)
 {
 	printfSerial("<TaskH begins.> ");
-	//Write the code below.
-	mdelay(1000);
+	
 	printfSerial("TaskH : Try Lock(M1). ");
-	//Write the code below.
-	GetMutex(&M1);
+	
 	printfSerial("TaskH : Get Lock(M1). ");
-	//Write the code below.
-	mdelay(3000);
-	printfSerial("TaskH : Release Lock(M1). ");
-	//Write the code below.
-	ReleaseMutex(&M1);
-	mdelay(1000);
+	
+	printfSerial("TaskH : Release Lock(M1). ");	
+	
+
 	printfSerial("<TaskH ends.> ");
     TerminateTask();
 }
 
+// Write the code below.
 TASK(TaskM)
 {
 	printfSerial("<TaskM begins.> ");
-	//Write the code below.
-	mdelay(3000);
+	
 	printfSerial("<TaskM ends.> ");
 	TerminateTask();
 }
 
+// Write the code below.
 TASK(TaskL)
 {
 	printfSerial("<TaskL begins.> ");
-	//Write the code below.
-	mdelay(3000);
+	
 	printfSerial("TaskL : Try Lock(M1). ");
-	//Write the code below.
-	GetMutex(&M1);
+	
 	printfSerial("TaskL : Get Lock(M1). ");
-	//Write the code below.
-	mdelay(9000);
-	printfSerial("TaskL : Release Lock(M1). ");
-	//Write the code below.
-	ReleaseMutex(&M1);
-	mdelay(1000);
+	
+	printfSerial("TaskL : Release Lock(M1). ");	
+	
+	
 	printfSerial("<TaskL ends.> ");
 	TerminateTask();
 }

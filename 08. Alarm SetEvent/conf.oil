@@ -29,10 +29,6 @@ CPU mySystem {
 		MASK = AUTO;
 	};
 
-	EVENT Event2 {
-		MASK = AUTO;
-	};
-
 	TASK Task1 {
 		PRIORITY = 1;
 		STACK = SHARED;
@@ -48,7 +44,6 @@ CPU mySystem {
 		};
 		SCHEDULE = FULL;
 		EVENT = Event1;
-		EVENT = Event2;
 		AUTOSTART = FALSE;
 		ACTIVATION = 1;
 	};
@@ -56,11 +51,6 @@ CPU mySystem {
 	ISR TimerISR {
 		CATEGORY = 2;
 		SOURCE = "TIMER1_COMPA";
-	};
-
-	ISR ButtonISR {
-		CATEGORY = 2;
-		SOURCE = "PCINT1";
 	};
 
 	COUNTER counter1 {
@@ -71,13 +61,11 @@ CPU mySystem {
 
 	ALARM alarm1 {
 		COUNTER = counter1;
-		ACTION = SETEVENT {
-			TASK = Task2;
-			EVENT = Event1;
-		};
+		// Write the code below.
+
 		AUTOSTART = TRUE {
-			ALARMTIME = 15;
-			CYCLETIME = 20;
+			// Write the code below.
+			
 		};
 	};
 };

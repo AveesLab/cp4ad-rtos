@@ -16,21 +16,18 @@ TASK(Task2)
 	EventMaskType mask;
 	printfSerial("Task2 Begins...");
 	printfSerial("Task2 Waits...");
-	WaitEvent(Event1 | Event2);
+	WaitEvent(Event1);
 	printfSerial("Task2 Wakes Up...");
 	GetEvent(Task2, &mask);
 	if(mask & Event1) {
 		printfSerial("[Event1]");
 		ClearEvent(Event1);
 	}
-	if (mask & Event2) {
-		printfSerial("[Event2]");
-		ClearEvent(Event2);
-	}
 	printfSerial("Task2 Finishes...");
 
 	TerminateTask();
 }
+
 ISR2(TimerISR)
 {
 	static long c = -4;
@@ -41,24 +38,3 @@ ISR2(TimerISR)
 	IncrementCounter(counter1);
 }
 
-ISR2(ButtonISR)
-{
-	int a0;
-	DisableAllInterrupts();
-	if ((PINC & 0x01) != 0) return;
-	printfSerial("<BUTTON ISR>");
-	a0 = analogRead(A0); // read ADC value
-	if (a0 < 50) { // UP
-		SetEvent(Task2, Event1);
-	} 
-	else if (a0 < 200) { // DOWN
-		SetEvent(Task2, Event2);
-	} 
-	else if (a0 < 380) { // LEFT
-		;
-	} 
-	else if (a0 < 520) { // RIGHT
-		;
-	}
-	EnableAllInterrupts();
-}

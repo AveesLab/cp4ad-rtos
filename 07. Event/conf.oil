@@ -26,11 +26,13 @@ CPU mySystem {
 	};
 	
 	EVENT Event1 {
-		MASK = AUTO;
+		// Write the code below.
+
 	};
 
 	EVENT Event2 {
-		MASK = AUTO;
+		// Write the code below.
+
 	};
 
 	TASK Task1 {
@@ -43,12 +45,11 @@ CPU mySystem {
 
 	TASK Task2 {
 		PRIORITY = 2;
-		STACK = PRIVATE {
-			SIZE = 512;
-		};
+		// Write the code below.
+
 		SCHEDULE = FULL;
-		EVENT = Event1;
-		EVENT = Event2;
+		// Write the code below.
+		
 		AUTOSTART = FALSE;
 		ACTIVATION = 1;
 	};

@@ -34,11 +34,12 @@ CPU mySystem {
 	};
 
 	TASK Task2 {
-		PRIORITY = 2;
+		// Write the code below.
+
 		STACK = SHARED;
-		SCHEDULE = FULL;
-		AUTOSTART = TRUE;
-		ACTIVATION = 1;
+		SCHEDULE = FULL;	// preemptive
+		AUTOSTART = TRUE;	
+        ACTIVATION = 1;
 	};
 
 	ISR TimerISR {

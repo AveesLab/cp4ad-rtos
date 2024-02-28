@@ -9,101 +9,79 @@ ISR2(TimerISR)
     static long c = -5;
     printfSerial("\n%4ld: ", ++c);
     if(c == -4) {
-    	//Write the code below.
 		InitMutex(&M1, Event1);
 		InitMutex(&M2, Event1);
     }
-    //Write the code below.
-    else if (c == 0) {
-    	ActivateTask(TaskL);
+    // Write the code below.
+    else if (     ) {
+    	
     }
-	else if (c == 2) {
-		ActivateTask(TaskM);
+	else if (     ) {
+		
 	}
-    else if (c == 4) {
-    	ActivateTask(TaskH);
+    else if (     ) {
+    	
     }
 }
 
+// Write the code below.
 TASK(TaskH)
 {
-	printfSerial("<TaskH begins.> ");
-	//Write the code below.
-	mdelay(1000);
-	printfSerial("TaskH : Try Lock(M1). ");
-	//Write the code below.
-	//GetMutex(&M1);
-	GetResource(S1);
-	printfSerial("TaskH : Get Lock(M1). ");
-	//Write the code below.
-	mdelay(3000);
-	printfSerial("TaskH : Try Lock(M2). ");
-	//Write the code below.
-	//GetMutex(&M2);
-	GetResource(S2);
-	printfSerial("TaskH : Get Lock(M2). ");
-	//Write the code below.
-	mdelay(1000);
-	printfSerial("TaskH : Release Lock(M2). ");
-	//Write the code below.
-	//ReleaseMutex(&M2);
-	ReleaseResource(S2);
-	mdelay(1000);
-	printfSerial("TaskH : Release Lock(M1). ");
-	//Write the code below.
-	//ReleaseMutex(&M1);
-	ReleaseResource(S1);
-	mdelay(1000);
-	printfSerial("<TaskH ends.> ");
+	printfSerial("<TaskH begins.> ");				// 4s				
+	
+	printfSerial("TaskH : Try Lock(S1). ");			// 5s
+	
+	printfSerial("TaskH : Get Lock(S1). ");
+	
+	printfSerial("TaskH : Try Lock(S2). ");			// 8s
+	
+	printfSerial("TaskH : Get Lock(S2). ");
+	
+	printfSerial("TaskH : Release Lock(S2). ");		// 9s
+	
+
+	printfSerial("TaskH : Release Lock(S1). ");		// 10s
+	
+
+	printfSerial("<TaskH ends.> ");					// 11s
     TerminateTask();
 }
 
+// Write the code below.
 TASK(TaskM)
 {
-	printfSerial("<TaskM Begins.> ");
-	mdelay(3000);
-	printfSerial("TaskM : Try Lock(M2), ");
-	//GetMutex(&M2);
-	GetResource(S2);
-	printfSerial("TaskM : Get Lock(M2). ");
-	mdelay(1000);
-	printfSerial("TaskL : Release Lock(M2). ");
-	//ReleaseMutex(&M2);
-	ReleaseResource(S2);
-	mdelay(1000);
-	printfSerial("<TaskM ends.> ");
+	printfSerial("<TaskM Begins.> ");				// 2s
+	
+	printfSerial("TaskM : Try Lock(S2), ");			// 5s
+	
+	printfSerial("TaskM : Get Lock(S2). ");
+	
+	printfSerial("TaskL : Release Lock(S2). ");		// 6s
+	
+
+	printfSerial("<TaskM ends.> ");					// 7s
 	TerminateTask();
 }
 
+// Write the code below.
 TASK(TaskL)
 {
-	printfSerial("<TaskL begins.> ");
-	//Write the code below.
-	mdelay(1000);
-	printfSerial("TaskL : Try Lock(M2). ");
-	//Write the code below.
-	//GetMutex(&M2);
-	GetResource(S2);
-	printfSerial("TaskL : Get Lock(M2). ");
-	//Write the code below.
-	mdelay(2000);
-	printfSerial("TaskL : Try Lock(M1). ");
-	//Write the code below.
-	//GetMutex(&M1);
-	GetResource(S1);
-	printfSerial("TaskL : Get Lock(M1). ");
-	//Write the code below.
-	mdelay(2000);
-	printfSerial("TaskL : Release Lock(M1). ");
-	//Write the code below.
-	//ReleaseMutex(&M1);
-	ReleaseResource(S1);
-	mdelay(1000);
-	printfSerial("TaskL : Release Lock(M2). ");
-	//Write the code below.
-	//ReleaseMutex(&M2);
-	ReleaseResource(S2);
-	mdelay(2000);
-	printfSerial("<TaskL ends.> ");
+	printfSerial("<TaskL begins.> ");				// 0s
+	
+	printfSerial("TaskL : Try Lock(S2). ");			// 1s
+	
+	printfSerial("TaskL : Get Lock(S2). ");
+	
+	printfSerial("TaskL : Try Lock(S1). ");			// 3s
+	
+	printfSerial("TaskL : Get Lock(S1). ");
+	
+	printfSerial("TaskL : Release Lock(S1). ");		// 5s
+	
+
+	printfSerial("TaskL : Release Lock(S2). ");		// 6s
+	
+
+	printfSerial("<TaskL ends.> ");					// 8s
 	TerminateTask();
 }

@@ -20,7 +20,8 @@ TASK(Task2)
 ISR2(TimerISR)
 {
 	static long c = -4;
-	IncrementCounter(counter1);
+	// Write the code below.
+	
 	printfSerial("\n%4ld: ", c++);
 }
 
