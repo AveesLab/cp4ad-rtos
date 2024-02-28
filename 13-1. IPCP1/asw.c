@@ -12,7 +12,7 @@ ISR2(TimerISR)
     	InitMutex(&M1, Event1);
     	InitMutex(&M2, Event2);
     }
-    //Write the code below.
+    // Write the code below.
     else if (     ) {
     	
     }
@@ -27,53 +27,53 @@ ISR2(TimerISR)
 // Write the code below.
 TASK(TaskH)
 {
-	printfSerial("<TaskH begins.> ");				// 5s
+	printfSerial("<TaskH begins.> ");               // 5s
 
-	printfSerial("TaskH : Try Lock(S2). ");    		// 6s
+	printfSerial("TaskH : Try Lock(S2). ");         // 6s
 	
 	printfSerial("TaskH : Get Lock(S2). ");
 
-	printfSerial("TaskH : Try Lock(S1). ");	   		// 9s
+	printfSerial("TaskH : Try Lock(S1). ");         // 9s
 	
 	printfSerial("TaskH : Get Lock(S1). ");
 	
-	printfSerial("TaskH : Release Lock(S1). ");	    // 12s
+	printfSerial("TaskH : Release Lock(S1). ");     // 12s
 	
 
-	printfSerial("TaskH : Release Lock(S2). ");	    // 13s
+	printfSerial("TaskH : Release Lock(S2). ");     // 13s
 	
 
-	printfSerial("<TaskH ends.> ");					// 14s
+	printfSerial("<TaskH ends.> ");                 // 14s
     TerminateTask();
 }
 
 // Write the code below.
 TASK(TaskM)
 {
-	printfSerial("<TaskM begins.> ");				// 3s
+	printfSerial("<TaskM begins.> ");               // 3s
 	
-	printfSerial("TaskM : Try Lock(S2). ");			// 4s
+	printfSerial("TaskM : Try Lock(S2). ");         // 4s
 	
 	printfSerial("TaskM : Get Lock(S2). ");
 
-	printfSerial("TaskM : Release Lock(S2). ");		// 6s
+	printfSerial("TaskM : Release Lock(S2). ");     // 6s
 	
 	
-	printfSerial("<TaskM ends.> ");					// 7s
+	printfSerial("<TaskM ends.> ");                 // 7s
 	TerminateTask();
 }
 
 TASK(TaskL)
 {
-	printfSerial("<TaskL begins.> ");				// 0s
+	printfSerial("<TaskL begins.> ");               // 0s
 	
-	printfSerial("TaskL : Try Lock(S1). ");			// 2s
+	printfSerial("TaskL : Try Lock(S1). ");         // 2s
 	
 	printfSerial("TaskL : Get Lock(S1). ");
 
-	printfSerial("TaskL : Release Lock(S1). ");		// 6s
+	printfSerial("TaskL : Release Lock(S1). ");     // 6s
 	
 
-	printfSerial("<TaskL ends.> ");					// 7s
+	printfSerial("<TaskL ends.> ");                 // 7s
 	TerminateTask();
 }
