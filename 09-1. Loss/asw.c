@@ -13,7 +13,7 @@ TASK(Task1)
 	printfSerial("Task1 Begins...\n");
 	for (i = 0; i < 1000000; i++) {
 		// Write the code below
-
+		
 	}
 	printfSerial("Added 1000000 to shared\n");
 	printfSerial("counter = %lu\n", shared);

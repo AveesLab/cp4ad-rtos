@@ -13,13 +13,13 @@ ISR2(TimerISR)
 		InitMutex(&M2, Event1);
     }
     // Write the code below.
-    else if (     ) {
+    else if (      ) {
     	
     }
-	else if (     ) {
+	else if (      ) {
 		
 	}
-    else if (     ) {
+    else if (      ) {
     	
     }
 }
@@ -81,7 +81,7 @@ TASK(TaskL)
 
 	printfSerial("TaskL : Release Lock(S2). ");     // 6s
 	
-
+	
 	printfSerial("<TaskL ends.> ");                 // 8s
 	TerminateTask();
 }

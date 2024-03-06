@@ -3,7 +3,7 @@
 #include "bsw.h"
 
 // Write the code below.
-/* 1 msec */
+#define TIMER1_US 1000U/* 1 msec */
 
 #define LEN_BUF 128
 extern "C"{

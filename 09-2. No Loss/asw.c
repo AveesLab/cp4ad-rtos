@@ -5,7 +5,6 @@ volatile unsigned long shared = 0;
 ISR2(TimerISR)
 {
     IncrementCounter(counter1);
-
 }
 
 TASK(Task1)
@@ -15,6 +14,8 @@ TASK(Task1)
 	for (i = 0; i < 1000000; i++) {
 		//Write the code below.
 		
+
+
 	}
 	printfSerial("Added 1000000 to shared\n");
 	printfSerial("counter = %lu\n", shared);
@@ -28,6 +29,8 @@ TASK(Task2)
     if (i < 1000) {
     	//Write the code below.
 		
+
+
     } else if (i == 1000) {
     	printfSerial("Added 1000 to shared\n");
 	}

@@ -9,13 +9,13 @@ ISR2(TimerISR)
     printfSerial("\n%4ld: ", ++c);
     if(c == -4) {
     	// Write the code below.
-
+		
     }
     // Write the code below.
-    else if (     ) {
+    else if (      ) {
     	
     }
-    else if (     ) {
+    else if (      ) {
     	
     }
 }
@@ -32,13 +32,13 @@ TASK(TaskH)
 	printfSerial("TaskH : Try Lock(M2). ");         // 10s
 	
 	printfSerial("TaskH : Get Lock(M2). ");
-	
+	mdelay(2000);	
 	printfSerial("TaskH : Release Lock(M2). ");     // 12s
-	
-
+	ReleaseMutex(&M2);
+	mdelay(1000);
 	printfSerial("TaskH : Release Lock(M1). ");     // 13s
-	
-	
+	ReleaseMutex(&M1);
+	mdelay(2000);
 	printfSerial("<TaskH ends.> ");                 // 15s
     TerminateTask();
 }
@@ -55,13 +55,13 @@ TASK(TaskL)
 	printfSerial("TaskL : Try Lock(M1). ");         // 7s
 	
 	printfSerial("TaskL : Get Lock(M1). ");
-	
+	mdelay(2000);
 	printfSerial("TaskL : Release Lock(M1). ");     // 9s
-	
-
+	ReleaseMutex(&M1);
+	mdelay(1000);
 	printfSerial("TaskL : Release Lock(M2). ");     // 10s
-	
-
+	ReleaseMutex(&M2);
+	mdelay(1000);
 	printfSerial("<TaskL ends.> ");                 // 11s
 	TerminateTask();
 }
