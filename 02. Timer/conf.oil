@@ -36,5 +36,5 @@ CPU mySystem {
 	ISR TimerISR {
 	// Write the code below.
 
-	}
+	};
 };
