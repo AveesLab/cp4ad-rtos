@@ -48,6 +48,7 @@ CPU mySystem {
 
 	ISR ButtonISR {
 		// Write the code below.
-		
+		CATEGORY = 2;
+		SOURCE = "PCINT1";
 	};
 };

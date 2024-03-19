@@ -12,7 +12,10 @@ TASK(Task1)
 TASK(Task2)
 {
 	// Write the code below.
-
+	printfSerial("Task2 Begins...");
+	mdelay(3000);
+	printfSerial("Task2 Finishes...");
+	
 	TerminateTask();
 }
 

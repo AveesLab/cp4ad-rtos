@@ -35,6 +35,7 @@ CPU mySystem {
 	
 	ISR TimerISR {
 	// Write the code below.
-
+		CATEGORY = 2;
+		SOURCE = "TIMER1_COMPA";
 	};
 };

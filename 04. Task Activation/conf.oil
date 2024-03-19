@@ -30,7 +30,7 @@ CPU mySystem {
 		STACK = SHARED;
 		SCHEDULE = FULL;	// preemptive
 		// Write the code below.
-	
+		AUTOSTART = FALSE;
         ACTIVATION = 1;		
 	};
 
@@ -39,7 +39,7 @@ CPU mySystem {
 		STACK = SHARED;
 		SCHEDULE = FULL;
 		// Write the code below.
-		
+		AUTOSTART = FALSE;
 		ACTIVATION = 1;
 	};
 

@@ -35,7 +35,7 @@ CPU mySystem {
 
 	TASK Task2 {
 		// Write the code below.
-
+		PRIORITY = 2;
 		STACK = SHARED;
 		SCHEDULE = FULL;	// preemptive
 		AUTOSTART = TRUE;	
