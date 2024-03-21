@@ -62,10 +62,14 @@ CPU mySystem {
 	ALARM alarm1 {
 		COUNTER = counter1;
 		// Write the code below.
-
+		ACTION = SETEVENT {
+			TASK = Task2;
+			EVENT = Event1;
+		}
 		AUTOSTART = TRUE {
 			// Write the code below.
-			
+			ALARMTIME = 15;
+			CYCLETIME = 20;
 		};
 	};
 };

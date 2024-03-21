@@ -21,7 +21,7 @@ ISR2(TimerISR)
 {
 	static long c = -4;
 	// Write the code below.
-	
+	IncrementCounter(counter1);
 	printfSerial("\n%4ld: ", c++);
 }
 

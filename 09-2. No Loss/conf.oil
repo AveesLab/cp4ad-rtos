@@ -49,7 +49,7 @@ CPU mySystem {
 		AUTOSTART = TRUE;
         ACTIVATION = 1;
 		// Write the code below.
-		
+		RESOURCE = S1;
 	};
 	
 	TASK Task2 {
@@ -59,7 +59,7 @@ CPU mySystem {
 		AUTOSTART = FALSE;
         ACTIVATION = 1;     
 		// Write the code below.
-
+		RESOURCE = S1;
 	};
     
 	ISR TimerISR {
@@ -69,6 +69,6 @@ CPU mySystem {
 
 	RESOURCE S1 {
 		// Write the code below.
-		
+		RESOURCEPROPERTY = STANDARD;
 	};
 };

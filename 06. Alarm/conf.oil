@@ -48,16 +48,31 @@ CPU mySystem {
 
 	COUNTER counter1 {
 		// Write the code below.
-
+		MINCYCLE = 1;
+		MAXALLOWEDVALUE = 127;
+		TICKSPERBASE = 1;
 	};
 
 	ALARM alarm1 {
 		// Write the code below.
-
+		COUNTER = counter1;
+		ACTION = ACTIVATETASK {
+			TASK = Task1;
+		};
+		AUTOSTART = TRUE {
+			ALARMTIME = 5;
+			CYCLETIME = 10;
+		};
 	};
-
 	ALARM alarm2 {
 		// Write the code below.
-		
+		COUNTER = counter1;
+		ACTION = ACTIVATETASK {
+			TASK = Task2;
+		};
+		AUTOSTART = TRUE {
+			ALARMTIME = 5;
+			CYCLETIME = 20;
+		};
 	};
 };

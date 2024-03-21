@@ -35,7 +35,7 @@ ISR2(TimerISR)
         ActivateTask(Task1);
     }
     //Write the code below.
-
+	IncrementCounter(counter1);
 	printfSerial("\n%4ld: ", c++);
 }
 

@@ -24,17 +24,17 @@ CPU mySystem {
 		APP_SRC = "bsw.cpp";
 		APP_SRC = "asw.c";
 		// Write the code below.
-
+		APP_SRC = "mutex.c";
 	};
     
 	EVENT Event1 {
 		 // Write the code below.
-
+		MASK = AUTO;
 	};
 
     TASK TaskH {
     	// Write the code below.
-		
+		PRIORITY = 3;
         STACK = PRIVATE{
             SIZE = 256;
         };
@@ -42,12 +42,12 @@ CPU mySystem {
         AUTOSTART = FALSE;
         ACTIVATION = 1;
         // Write the code below.
-
+		EVENT = Event1;
     };
     
     TASK TaskM {
     	// Write the code below.
-		
+		PRIORITY = 2;
         STACK = PRIVATE{
             SIZE = 256;
         };
@@ -58,7 +58,7 @@ CPU mySystem {
         
     TASK TaskL {
     	// Write the code below.
-		
+		PRIORITY = 1;		
         STACK = PRIVATE{
             SIZE = 256;
         };
@@ -66,7 +66,7 @@ CPU mySystem {
         AUTOSTART = FALSE;
         ACTIVATION = 1;
         // Write the code below.
-		
+		EVENT = Event1;
     };
     
 	ISR TimerISR {
