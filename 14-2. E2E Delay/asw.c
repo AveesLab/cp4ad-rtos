@@ -107,13 +107,13 @@ TASK(Task_4s)
 TASK(Task_8s)
 {
 	printfSerial("Task_8s begins... ");
-	Runnable_7();
-	Runnable_6();
-	Runnable_5();
-	Runnable_4();
-	Runnable_3();
-	Runnable_2();
 	Runnable_1();
+	Runnable_2();
+	Runnable_3();
+	Runnable_4();
+	Runnable_5();
+	Runnable_6();
+	Runnable_7();
 	printfSerial("Task_8s finishes... ");
 	TerminateTask();
 }

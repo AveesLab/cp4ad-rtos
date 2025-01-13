@@ -30,7 +30,7 @@ export  ARDUINO_SDK_FILES   = $(strip )
 export  ARDUINO_PHY_PORT    = /dev/$(ARDUINO_PORT)
 else    # Linux
 export ARDUINO_SDK_FILES   = $(shell cygpath -ms "c:\Arduino")
-export ARDUINO_PHY_PORT    = COM9
+export ARDUINO_PHY_PORT    = COM36
 endif   # Linux
 
 PHONY: upload
