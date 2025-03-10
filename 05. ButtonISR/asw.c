@@ -31,6 +31,9 @@ ISR2(ButtonISR)
 {
 	int a0;
 	DisableAllInterrupts();
+	if ((PINC & 0x01) != 0) return;
+   	printfSerial("<BUTTON ISR>");
+    	a0 = analogRead(A0); // read ADC value
 	// Write the code below.
 	
 	EnableAllInterrupts();
