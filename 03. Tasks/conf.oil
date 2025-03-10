@@ -30,12 +30,16 @@ CPU mySystem {
 		STACK = SHARED;
 		SCHEDULE = FULL;	// preemptive
 		AUTOSTART = TRUE;	
-        ACTIVATION = 1;		
+        	ACTIVATION = 1;		
 	};
 
 	TASK Task2 {
 		// Write the code below.
-		
+
+		STACK = SHARED;
+		SCHEDULE = FULL;	// preemptive
+		AUTOSTART = TRUE;	
+        	ACTIVATION = 1;		
 	};
 
 	ISR TimerISR {
