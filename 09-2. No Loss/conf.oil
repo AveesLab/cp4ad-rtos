@@ -47,7 +47,7 @@ CPU mySystem {
 		STACK = SHARED;
 		SCHEDULE = FULL;
 		AUTOSTART = TRUE;
-        ACTIVATION = 1;
+                ACTIVATION = 1;
 		// Write the code below.
 		
 	};
@@ -57,7 +57,7 @@ CPU mySystem {
 		STACK = SHARED;
 		SCHEDULE = FULL;
 		AUTOSTART = FALSE;
-        ACTIVATION = 1;     
+                ACTIVATION = 1;     
 		// Write the code below.
 		
 	};
